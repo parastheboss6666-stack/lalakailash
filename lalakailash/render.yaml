@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: lala-kailash-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: backend
+
+  - type: static
+    name: lala-kailash-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    rootDir: frontend
